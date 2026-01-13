@@ -14,6 +14,21 @@ This repository benchmarks multiple defense methods against self-evolving automa
 pip install -r requirements.txt
 ```
 
+## Embedding Model
+Our defense uses a fine-tuned MPNET model for embedding-based detection. The pre-trained weights can be downloaded from:
+
+- **Hugging Face**: [sentence-transformers/all-mpnet-base-v2](https://huggingface.co/sentence-transformers/all-mpnet-base-v2)
+
+Set the model path in your environment:
+```bash
+export MPNET_MODEL_PATH="/path/to/your/mpnet/model"
+```
+
+Or configure directly in [config/ModelConfig.py](config/ModelConfig.py):
+```python
+MPNET_PATH = "/path/to/your/mpnet/model"
+```
+
 ## Configuration
 - Set the project root (used by code to locate configs/models):
 ```bash
