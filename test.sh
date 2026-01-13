@@ -41,7 +41,8 @@ python evaluation.py \
     --target-max-tokens 150 \
     --evaluator-model "gpt-4.1" \
     --attack-model "vicuna-13b" \
-    --target-model $TARGET_MODEL 
+    --target-model $TARGET_MODEL \
+    --no-wandb \
 
 echo "defense test complete!"
 
@@ -74,6 +75,7 @@ python tap_prompt_attack_eval_back.py \
     --evaluator-model "gpt-4.1" \
     --attack-model "vicuna-13b" \
     --target-model $TARGET_MODEL \
+    --no-wandb \
 
 echo "defense test complete!"
 
@@ -106,5 +108,6 @@ python tap_prompt_attack_eval_back_database.py \
     --evaluator-model "gpt-4.1" \
     --attack-model "vicuna-13b" \
     --target-model $TARGET_MODEL \
+    --no-wandb \
 
 echo "defense test complete!"
