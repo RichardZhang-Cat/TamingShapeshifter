@@ -23,7 +23,7 @@ import faiss
 
 class EmbeddingDefenseConfig(BaseDefenderConfig):
     """Embedding similarity-based defense mechanism configuration"""
-    def __init__(self, model_path: str = os.environ.get("EMBEDDING_MODEL_PATH", "./checkpoints/best_model.pth"), 
+    def __init__(self, model_path: str = os.environ.get("EMBEDDING_MODEL_PATH"), 
                  similarity_threshold: float = 0.4, device: str = "cuda"):
         super().__init__()
         self.defender_name = "EmbeddingDefense"
