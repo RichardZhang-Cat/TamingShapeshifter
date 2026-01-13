@@ -364,13 +364,13 @@ class QwenEvaluator():
 
         print(f'\tQuerying evaluator with {len(attack_prompt_list)} prompts (to evaluate judge scores)', flush=True)
 
-        # 构建对话列表
+        # Build conversation list
         full_prompts = []
         for prompt in prompts_list:
             full_prompt = self.create_conv(prompt, system_prompt=self.system_prompt)
             full_prompts.append(full_prompt)
 
-        # 批量生成
+        # Batch generate
         raw_outputs = self.model.batched_generate(
             full_prompts, 
             max_n_tokens=self.max_n_tokens,
@@ -390,13 +390,13 @@ class QwenEvaluator():
         
         print(f'\tQuerying evaluator with {len(attack_prompt_list)} prompts (to evaluate on-topic scores)', flush=True)
 
-        # 构建对话列表
+        # Build conversation list
         full_prompts = []
         for prompt in prompts_list:
             full_prompt = self.create_conv(prompt, system_prompt=self.system_prompt_on_topic)
             full_prompts.append(full_prompt)
 
-        # 批量生成
+        # Batch generate
         raw_outputs = self.model.batched_generate(
             full_prompts, 
             max_n_tokens=self.max_n_tokens,

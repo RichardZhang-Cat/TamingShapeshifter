@@ -92,7 +92,7 @@ def main():
     print(f"  Max samples: {args.max_samples}")
     print(f"  Results folder: {args.results_folder}")
     
-    # 创建配置
+    # Create configuration
     config = AdvBenchConfig(
         branching_factor=args.branching_factor,
         width=args.width,
@@ -112,7 +112,7 @@ def main():
     )
 
     if args.defense_method == "icl":
-        # 创建ICL防御配置
+        # Create ICL defense configuration
         defense_config = IclDefenderConfig()
     elif args.defense_method == "rpo":
         defense_config = RpoDefenderConfig()
@@ -134,7 +134,7 @@ def main():
             device=args.embedding_device
         )
 
-    # 创建评估器并运行
+    # Create evaluator and run
     evaluator = TapEvaluator(
         config, 
         use_wandb=not args.no_wandb,
